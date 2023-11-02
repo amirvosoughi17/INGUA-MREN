@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import express from 'express';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { blogRoute } from "./routes/blog.route.js";
 const app = express();
 dotenv.config();
@@ -14,4 +15,6 @@ mongoose
 app.listen(process.env.PORT)
 
 app.use(express.json());
+app.use(cors());
+
 app.use("/api/v1/blog", blogRoute);
