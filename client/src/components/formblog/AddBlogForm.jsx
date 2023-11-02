@@ -22,7 +22,7 @@ const AddBlogForm = () => {
     e.preventDefault() ;
     try {
       setLoading(true)
-      const res = await fetch ('api/v1/blog/new-blog' , {
+      const res = await fetch ('http://localhost:4000/api/v1/blog/new' , {
         method  : "POST",
         headers : {
           'content-type' : 'application/json'
